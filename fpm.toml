@@ -9,10 +9,12 @@ auto-executables = true
 auto-tests = true
 auto-examples = true
 module-naming = false
+external-modules = ["li2mod","SGS1_lib"]
 [install]
 library = false
 [fortran]
 implicit-typing = false
 implicit-external = false
 source-form = "free"
-
+[dependencies]
+stdlib = { git="https://github.com/fortran-lang/stdlib", branch="stdlib-fpm" }

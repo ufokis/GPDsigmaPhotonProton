@@ -1,0 +1,19 @@
+# Arquivos de compilação
+*.o
+*.mod
+*.modd
+*.MOD
+*.MODD
+*.obj
+
+# Arquivos executáveis
+*.exe
+*.out
+
+# Arquivos de depuração
+*.pdb
+*.modd
+
+# Diretório de saída da compilação
+build/
+

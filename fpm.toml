@@ -1,4 +1,5 @@
 name = "GPDsigmaPhotonProton"
+
 version = "0.1.0"
 license = "license"
 author = "Eliton Trindade"
@@ -8,8 +9,6 @@ copyright = "Copyright 2024, Eliton Trindade"
 auto-executables = true
 auto-tests = true
 auto-examples = true
-module-naming = false
-external-modules = ["li2mod","SGS1_lib"]
 [install]
 library = false
 [fortran]
@@ -17,4 +16,10 @@ implicit-typing = false
 implicit-external = false
 source-form = "free"
 [dependencies]
-stdlib = { git="https://github.com/fortran-lang/stdlib", branch="stdlib-fpm" }
+# stdlib = { git="https://github.com/fortran-lang/stdlib", branch="stdlib-fpm" }
+
+FunctionsMath = { git = "git@github.com:ufokis/FunctionsMath.git" }
+Teste_GPDs = { git = "git@github.com:ufokis/GPD_teste.git" }
+quadpack = { git="https://github.com/jacobwilliams/quadpack.git" }
+
+

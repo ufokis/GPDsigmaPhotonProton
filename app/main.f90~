@@ -1,0 +1,16 @@
+program main
+  use GPDsigmaPhotonProton
+  implicit none
+
+  real(wp) :: Amplitude, Y, W, zeta, SNN
+  integer  :: IY
+  SNN  = 5020.0_wp 
+  IY   = - 60
+  Y    = 0.1_wp*float(IY)
+  W    = M_V*SNN*EXP(Y)
+  zeta = (M_V**2)/W
+  XI   = zeta / (2.D0-zeta)
+
+  call AmpPhotonProton(Amplitude)
+  print*, "Amplitude", y, Amplitude
+end program main

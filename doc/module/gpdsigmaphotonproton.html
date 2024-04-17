@@ -38,16 +38,13 @@
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="navbar-nav">
                   <li class="nav-item">
-                    <a class="nav-link" href="../sourcefile/gpdsigmaphotonproton.f90.html">Source File</a>
+                    <a class="nav-link" href="sourcefile/gpdsigmaphotonproton.f90.html">Source File</a>
                   </li>
                 <li class="nav-item">
                   <a class="nav-link" href="../lists/modules.html">Modules</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="../lists/procedures.html">Procedures</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="../lists/absint.html">Abstract Interfaces</a>
                 </li>
             </ul>
               <div class="d-flex align-items-end flex-grow-1">
@@ -72,8 +69,9 @@
         <ul class="list-inline" style="margin-bottom:0px;display:inline">
 
             <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
-              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
-                 title="100.0% of total for modules and submodules.">151 statements</a>
+              <a data-bs-toggle="tooltip"
+                 data-bs-placement="bottom" data-html="true"
+                 title="100.0% of total for modules and submodules.">164 statements</a>
             </li>
 
             <li class="list-inline-item" id="source-file">
@@ -127,6 +125,7 @@
             <a class="list-group-item" href="../module/gpdsigmaphotonproton.html#variable-c_1">c_1</a>
             <a class="list-group-item" href="../module/gpdsigmaphotonproton.html#variable-c_2">c_2</a>
             <a class="list-group-item" href="../module/gpdsigmaphotonproton.html#variable-beta_0">beta_0</a>
+            <a class="list-group-item" href="../module/gpdsigmaphotonproton.html#variable-name">name</a>
         </div>
       </div>
     </div>
@@ -138,18 +137,7 @@
   
   
   
-      <div class="card mb-4">
-      <a data-bs-toggle="collapse" href="#absints-0"
-         aria-expanded="false" aria-controls="absints-0">
-         <h4 class="card-header bg-primary text-white">Abstract Interfaces</h4>
-      </a>
-      <div id="absints-0" class="collapse">
-        <div class="list-group list-group-flush">
-            <a class="list-group-item" href="../module/gpdsigmaphotonproton.html#interface-func">func</a>
-        </div>
-      </div>
-    </div>
-
+  
   
       <div class="card mb-4">
       <a data-bs-toggle="collapse" href="#funcs-0"
@@ -158,6 +146,7 @@
       </a>
       <div id="funcs-0" class="collapse">
         <div class="list-group list-group-flush">
+            <a class="list-group-item" href="../module/gpdsigmaphotonproton.html#proc-calculo_derivative_cross_section">calculo_derivative_cross_section</a>
             <a class="list-group-item" href="../module/gpdsigmaphotonproton.html#proc-intimg">IntImg</a>
             <a class="list-group-item" href="../module/gpdsigmaphotonproton.html#proc-intreal">IntReal</a>
             <a class="list-group-item" href="../module/gpdsigmaphotonproton.html#proc-intcomplex">IntComplex</a>
@@ -197,16 +186,17 @@
     </div>
 
     <div class="col-md-9" id='text'>
-      <p>Modulo $ \sigma(\gamma+p --&gt; J/\Psi P $)</p>
+      <p>Módulo que calcula <script type="math/tex"> \sigma^{\gamma+p \rightarrow J/\Psi+p} </script> e <script type="math/tex"> \frac{id\sigma^{\gamma+p \rightarrow j/\Psi+p}}{dt}\Big|_{t = 0} </script>
+</p>
 <br>          <div class="card mb-4">
       <h3 class="card-header card-title bg-light">Uses</h3>
       <div class="card-body">
         <ul class="list-group list-group-flush">
             <li class="list-group-item">
               <ul class="list-inline">
-                  <li class="list-inline-item">FunctionsMath</li>
-                  <li class="list-inline-item">quadpack</li>
                   <li class="list-inline-item">Teste_GPDs</li>
+                  <li class="list-inline-item">quadpack</li>
+                  <li class="list-inline-item">FunctionsMath</li>
               </ul>
             </li>
         </ul>
@@ -232,7 +222,7 @@
         <tr>
             <td>
               <span class="anchor" id="variable-pi"></span>
-              real(kind=8),
+              real(kind=wp),
             </td>
               <td>public,</td>
             <td>
@@ -241,15 +231,16 @@ parameter
             <td>::</td>
             <td><strong>pi</strong></td>
 <td> =</td>
-                <td>3.1415926d0</td>
+                <td>3.1415926_wp</td>
             <td>
-                
+                <p>Número de <script type="math/tex">\pi</script>
+</p>
             </td>
         </tr>
         <tr>
             <td>
               <span class="anchor" id="variable-m_c"></span>
-              real(kind=8),
+              real(kind=wp),
             </td>
               <td>public,</td>
             <td>
@@ -258,15 +249,15 @@ parameter
             <td>::</td>
             <td><strong>m_c</strong></td>
 <td> =</td>
-                <td>1.55d0</td>
+                <td>1.55_wp</td>
             <td>
-                
+                <p>Massa do quark charm</p>
             </td>
         </tr>
         <tr>
             <td>
               <span class="anchor" id="variable-alpha_s"></span>
-              real(kind=8),
+              real(kind=wp),
             </td>
               <td>public</td>
             <td>
@@ -277,13 +268,13 @@ parameter
                 <td></td>
                 <td></td>
             <td>
-                
+                <p>Constante de aclopamento da QCD</p>
             </td>
         </tr>
         <tr>
             <td>
               <span class="anchor" id="variable-n_f"></span>
-              real(kind=8),
+              real(kind=wp),
             </td>
               <td>public,</td>
             <td>
@@ -292,15 +283,15 @@ parameter
             <td>::</td>
             <td><strong>n_f</strong></td>
 <td> =</td>
-                <td>4.d0</td>
+                <td>4.0_wp</td>
             <td>
-                
+                <p>Número de sabores ativos de sabores</p>
             </td>
         </tr>
         <tr>
             <td>
               <span class="anchor" id="variable-m_v"></span>
-              real(kind=8),
+              real(kind=wp),
             </td>
               <td>public,</td>
             <td>
@@ -309,15 +300,15 @@ parameter
             <td>::</td>
             <td><strong>M_V</strong></td>
 <td> =</td>
-                <td>2.d0*m_c</td>
+                <td>2.0_wp*m_c</td>
             <td>
-                
+                <p>Massa do meson Vetorial</p>
             </td>
         </tr>
         <tr>
             <td>
               <span class="anchor" id="variable-mu_f"></span>
-              real(kind=8),
+              real(kind=wp),
             </td>
               <td>public,</td>
             <td>
@@ -326,15 +317,15 @@ parameter
             <td>::</td>
             <td><strong>mu_f</strong></td>
 <td> =</td>
-                <td>2.37d0</td>
+                <td>M_V</td>
             <td>
-                
+                <p>escala de fatorização</p>
             </td>
         </tr>
         <tr>
             <td>
               <span class="anchor" id="variable-mu_r"></span>
-              real(kind=8),
+              real(kind=wp),
             </td>
               <td>public,</td>
             <td>
@@ -345,13 +336,13 @@ parameter
 <td> =</td>
                 <td>mu_f</td>
             <td>
-                
+                <p>Fator de renormalização</p>
             </td>
         </tr>
         <tr>
             <td>
               <span class="anchor" id="variable-n_c"></span>
-              real(kind=8),
+              real(kind=wp),
             </td>
               <td>public,</td>
             <td>
@@ -360,15 +351,15 @@ parameter
             <td>::</td>
             <td><strong>N_c</strong></td>
 <td> =</td>
-                <td>3.d0</td>
+                <td>3.0_wp</td>
             <td>
-                
+                <p>Numero de cor</p>
             </td>
         </tr>
         <tr>
             <td>
               <span class="anchor" id="variable-qa"></span>
-              real(kind=8),
+              real(kind=wp),
             </td>
               <td>public,</td>
             <td>
@@ -379,13 +370,13 @@ parameter
 <td> =</td>
                 <td>mu_f</td>
             <td>
-                
+                <p>momento transferido</p>
             </td>
         </tr>
         <tr>
             <td>
               <span class="anchor" id="variable-c_f"></span>
-              real(kind=8),
+              real(kind=wp),
             </td>
               <td>public,</td>
             <td>
@@ -394,15 +385,15 @@ parameter
             <td>::</td>
             <td><strong>C_f</strong></td>
 <td> =</td>
-                <td>4/3.d0</td>
+                <td>4/3.0_wp</td>
             <td>
-                
+                <p>Fator de cor</p>
             </td>
         </tr>
         <tr>
             <td>
               <span class="anchor" id="variable-e_q"></span>
-              real(kind=8),
+              real(kind=wp),
             </td>
               <td>public,</td>
             <td>
@@ -411,15 +402,15 @@ parameter
             <td>::</td>
             <td><strong>e_q</strong></td>
 <td> =</td>
-                <td>2/3.d0</td>
+                <td>2/3.0_wp</td>
             <td>
-                
+                <p>Carga do quark</p>
             </td>
         </tr>
         <tr>
             <td>
               <span class="anchor" id="variable-xi"></span>
-              real(kind=8),
+              real(kind=wp),
             </td>
               <td>public</td>
             <td>
@@ -430,13 +421,13 @@ parameter
                 <td></td>
                 <td></td>
             <td>
-                
+                <p>Parametro de assimetria</p>
             </td>
         </tr>
         <tr>
             <td>
               <span class="anchor" id="variable-c_1"></span>
-              real(kind=8),
+              real(kind=wp),
             </td>
               <td>public,</td>
             <td>
@@ -447,13 +438,14 @@ parameter
 <td> =</td>
                 <td>C_f</td>
             <td>
-                
+                <p>Estrutura de cor <script type="math/tex">c_1</script>
+</p>
             </td>
         </tr>
         <tr>
             <td>
               <span class="anchor" id="variable-c_2"></span>
-              real(kind=8),
+              real(kind=wp),
             </td>
               <td>public,</td>
             <td>
@@ -462,15 +454,16 @@ parameter
             <td>::</td>
             <td><strong>c_2</strong></td>
 <td> =</td>
-                <td>1/(2.d0*N_c)</td>
+                <td>-1/(2.0_wp*N_c)</td>
             <td>
-                
+                <p>Estrutura de cor <script type="math/tex">c_2</script>
+</p>
             </td>
         </tr>
         <tr>
             <td>
               <span class="anchor" id="variable-beta_0"></span>
-              real(kind=8),
+              real(kind=wp),
             </td>
               <td>public,</td>
             <td>
@@ -479,78 +472,61 @@ parameter
             <td>::</td>
             <td><strong>beta_0</strong></td>
 <td> =</td>
-                <td>(11*N_c/3.D0)-(2*n_f/3.D0)</td>
+                <td>(11.0_wp*N_c/3.0_wp)-(2*n_f/3.0_wp)</td>
             <td>
-                
+                <p>Parametro <script type="math/tex">b_0</script>
+</p>
             </td>
         </tr>
-    </tbody>
-  </table>
-
-        </section>
-        <br>
-
-
-
-        <section>
-          <h2>Abstract Interfaces</h2>
-              <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="interface-func"></span><h3>abstract interface
-        
-    </h3></div>
-    <ul class="list-group">
-      <li class="list-group-item">
-            <h3>
-    public  function func(xx)  
-
-    </h3>
-  
-
-  <h4>Arguments</h4>
-      <table class="table table-striped varlist">
-    <thead>
-      <tr>
-        <th scope="col">Type</th>
-<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
-        <th scope="col"></th>
-        <th scope="col">Name</th>
-        <th scope="col"></th>
-    </thead>
-    <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-xx"></span>
-              real(kind=wp),
+              <span class="anchor" id="variable-name"></span>
+              character(len=64),
             </td>
-<td>intent(in)</td>
-              <td></td>            <td>
-              
+              <td>public,</td>
+            <td>
+parameter               
             </td>
             <td>::</td>
-            <td><strong>xx</strong></td>
+            <td><strong>name</strong></td>
+<td> =</td>
+                <td>&#39;nCTEQ15WZSIH_208_82&#39;</td>
             <td>
-                
+                <p>Nome da PDF utilizada</p>
             </td>
         </tr>
     </tbody>
   </table>
 
-    <h4>
-    Return Value
-    <small>real(kind=wp)</small>
-    </h4>
-    
-
-      </li>
-    </ul>
-  </div>
-
         </section>
         <br>
+
+
+
 
 
         <section>
           <h2>Functions</h2>
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-calculo_derivative_cross_section"></span> <h3>public  function <a href='../proc/calculo_derivative_cross_section.html'>calculo_derivative_cross_section</a>() result(derivative_cross_section)  
+</h3></div>
+    <div class="card-body">
+          
+  <p>Função que calcula <script type="math/tex"> \frac{id\sigma^{\gamma+p \rightarrow j/\Psi+p}}{dt}\Big|_{t = 0} </script>
+</p>
+
+  <h4>Arguments</h4>
+    <em>None</em>
+    <h4>
+    Return Value
+    <small>real(kind=wp)</small>
+    </h4>
+    <p>Retorno de <script type="math/tex">\frac{d\sigma^{\gamma+p \rightarrow j/\Psi+p}}{dt}\Big|_{t = 0} </script>
+</p>
+
+    </div>
+  </div>
+
               <div class="card">
     <div class="card-header codesum"><span class="anchor" id="proc-intimg"></span> <h3>public  function <a href='../proc/intimg.html'>IntImg</a>(x) result(ResultIntImg)  
 </h3></div>
@@ -707,7 +683,7 @@ parameter
         <tr>
             <td>
               <span class="anchor" id="variable-x~4"></span>
-              real(kind=8)
+              real(kind=wp)
             </td>
 <td></td>
               <td></td>            <td>
@@ -724,7 +700,7 @@ parameter
 
     <h4>
     Return Value
-    <small>complex(kind=8)</small>
+    <small>complex(kind=wp)</small>
     </h4>
     
 
@@ -752,7 +728,7 @@ parameter
         <tr>
             <td>
               <span class="anchor" id="variable-y"></span>
-              complex(kind=8)
+              complex(kind=wp)
             </td>
 <td></td>
               <td></td>            <td>
@@ -769,7 +745,7 @@ parameter
 
     <h4>
     Return Value
-    <small>complex(kind=8)</small>
+    <small>complex(kind=wp)</small>
     </h4>
     
 
@@ -797,7 +773,7 @@ parameter
         <tr>
             <td>
               <span class="anchor" id="variable-x~5"></span>
-              real(kind=8)
+              real(kind=wp)
             </td>
 <td></td>
               <td></td>            <td>
@@ -814,7 +790,7 @@ parameter
 
     <h4>
     Return Value
-    <small>complex(kind=8)</small>
+    <small>complex(kind=wp)</small>
     </h4>
     
 
@@ -842,7 +818,7 @@ parameter
         <tr>
             <td>
               <span class="anchor" id="variable-y~2"></span>
-              complex(kind=8)
+              complex(kind=wp)
             </td>
 <td></td>
               <td></td>            <td>
@@ -859,7 +835,7 @@ parameter
 
     <h4>
     Return Value
-    <small>complex(kind=8)</small>
+    <small>complex(kind=wp)</small>
     </h4>
     
 
@@ -871,7 +847,8 @@ parameter
 </h3></div>
     <div class="card-body">
           
-  
+  <p>Função auxiliar <script type="math/tex">a_2</script>
+</p>
 
   <h4>Arguments</h4>
       <table class="table table-striped varlist">
@@ -887,7 +864,7 @@ parameter
         <tr>
             <td>
               <span class="anchor" id="variable-y~3"></span>
-              complex(kind=8)
+              complex(kind=wp)
             </td>
 <td></td>
               <td></td>            <td>
@@ -904,7 +881,7 @@ parameter
 
     <h4>
     Return Value
-    <small>complex(kind=8)</small>
+    <small>complex(kind=wp)</small>
     </h4>
     
 
@@ -916,7 +893,8 @@ parameter
 </h3></div>
     <div class="card-body">
           
-  
+  <p>Função auxiliar <script type="math/tex">a_2</script>
+</p>
 
   <h4>Arguments</h4>
       <table class="table table-striped varlist">
@@ -932,7 +910,7 @@ parameter
         <tr>
             <td>
               <span class="anchor" id="variable-y~4"></span>
-              complex(kind=8)
+              complex(kind=wp)
             </td>
 <td></td>
               <td></td>            <td>
@@ -949,7 +927,7 @@ parameter
 
     <h4>
     Return Value
-    <small>complex(kind=8)</small>
+    <small>complex(kind=wp)</small>
     </h4>
     
 
@@ -962,11 +940,11 @@ parameter
         <section>
           <h2>Subroutines</h2>
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-ampphotonproton"></span> <h3>public  subroutine <a href='../proc/ampphotonproton.html'>AmpPhotonProton</a>(Amplitude)  
+    <div class="card-header codesum"><span class="anchor" id="proc-ampphotonproton"></span> <h3>public  subroutine <a href='../proc/ampphotonproton.html'>AmpPhotonProton</a>(Amplitude, ier1, ier2)  
 </h3></div>
     <div class="card-body">
           
-  
+  <p>Subrotina que retorna a Amplitude (<script type="math/tex">A^g_\text{LO}, A^g_\text{NLO}, A^q_\text{NLO}</script>)    </p>
 
   <h4>Arguments</h4>
       <table class="table table-striped varlist">
@@ -994,6 +972,36 @@ parameter
 
             </td>
         </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ier1"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>ier1</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ier2"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>ier2</strong></td>
+            <td>
+
+            </td>
+        </tr>
     </tbody>
   </table>
 
@@ -1014,10 +1022,7 @@ parameter
     <footer>
       <div class="container">
         <div class="row justify-content-between">
-          <div class="col">
-            <p>
-              Fortran Program
-              &copy; 2024 
+          <div class="col"><p>Fortran Program was developed by <br>&copy; 2024 
 </p>
           </div>
           <div class="col">
